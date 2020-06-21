@@ -10,7 +10,7 @@ class RaspberryRobot(object):
         self.rear_right_motor = Motor(26, 19)
 
     def forward(self):
-        print("go backward")
+        print("go forward")
         self.front_left_motor.forward()
         self.front_right_motor.forward()
         self.rear_left_motor.forward()
@@ -25,17 +25,17 @@ class RaspberryRobot(object):
 
     def left(self):
         print("left")
-        self.front_left_motor.forward()
-        self.front_right_motor.backward()
-        self.rear_left_motor.forward()
-        self.rear_right_motor.backward()
+        self.front_left_motor.forward(0)
+        self.front_right_motor.forward()
+        self.rear_left_motor.forward(0)
+        self.rear_right_motor.forward()
 
     def right(self):
         print("right")
-        self.front_left_motor.backward()
-        self.front_right_motor.forward()
-        self.rear_left_motor.backward()
-        self.rear_right_motor.forward()
+        self.front_left_motor.forward()
+        self.front_right_motor.forward(0)
+        self.rear_left_motor.forward()
+        self.rear_right_motor.forward(0)
 
 
 if __name__ == '__main__':
