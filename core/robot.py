@@ -9,6 +9,13 @@ class RaspberryRobot(object):
         self.rear_left_motor = Motor(6, 13)
         self.rear_right_motor = Motor(26, 19)
 
+    def stop(self):
+        print("stop")
+        self.front_left_motor.stop()
+        self.front_right_motor.stop()
+        self.rear_left_motor.stop()
+        self.rear_right_motor.stop()
+
     def forward(self):
         print("go forward")
         self.front_left_motor.forward()
